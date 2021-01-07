@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1606403024 source:c:\users\lukas\onedrive\desktop\programieren\ue_1_taschenrechner\main.c
+	<stdio.h>
+	<stdlib.h>
+

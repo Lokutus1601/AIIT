@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1607615242 source:c:\users\lukas\onedrive\desktop\programieren\ue04_minimum\main.c
+	<stdio.h>
+	<stdlib.h>
+
