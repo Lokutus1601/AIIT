@@ -2,7 +2,7 @@
 #include <stdlib.h>
 int main()
 {
-  ;
+
 		double gehalt;
 		double spende;
 		char s[100];

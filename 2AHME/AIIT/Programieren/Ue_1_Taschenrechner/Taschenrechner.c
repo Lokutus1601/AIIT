@@ -14,6 +14,7 @@ int main()
 
     int zahl2;
 
+
     int summe, differenz, produkt, division;
     // Ausgabe des Titels
 
