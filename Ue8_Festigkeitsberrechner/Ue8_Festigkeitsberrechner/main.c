@@ -1,0 +1,140 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+char s [100];
+
+int rechnerwahl;
+int material;
+double laenge;
+double seitenlaenge;
+double belastung;
+double zugkraft;
+double flaeche;
+double estahl = 210000;
+double ealu = 70000;
+double ebeton = 30000;
+double sigma;
+double epsilon;
+double laengenaenderung;
+double a;
+double b;
+double c;
+double alpha;
+double beta;
+double gama;
+double A;
+double U;
+int n,l,m,f;
+int main()
+{
+
+  do
+  {
+  printf("Bitte waehlen sie ihren Rechner aus: 1 ... Festigkeitsberrechner, 2 ... Dreiecksberrechner 3... Rechner beenden\n");
+  fgets(s,100,stdin);
+  sscanf(s,"%d", & rechnerwahl);
+
+  if(rechnerwahl < 1 || rechnerwahl > 3)
+    {
+       printf("Bitte geben sie eine richtige Zahl ein\n");
+
+    }
+
+     switch (rechnerwahl)
+     {
+
+          case 1:
+
+                  do
+
+                  {
+                  printf("Bitte geben sie das Material an: 1... Stahl, 2... Aluminium, 3... Beton, 4...Program beenden\n");
+                  fgets(s,100,stdin);
+                   n = sscanf(s,"%d",&material);
+                    if(material < 1 || material > 4)
+                    {
+                    printf("Bitte geben sie eine richtige Zahl ein");
+
+                    }
+
+                    printf("Bitte geben sie ihre Materiallaenge(mm) ein!\n");
+                    fgets(s,100,stdin);
+                    f = sscanf(s,"%lf",&laenge);
+                    printf("Bitte geben sie ihre Flaeche(mm^2) ein!\n");
+                    fgets(s,100,stdin);
+                    m = sscanf(s,"%lf",&flaeche);
+                    printf("Bitte geben sie ihre Zugkraft (N/mm^2) ein!\n");
+                    fgets(s,100,stdin);
+                    l = sscanf(s,"%lf",&zugkraft);
+                  }
+                  while (material != 4 || n != 1 || f != 1 || m != 1 || l != 1);
+
+                      switch(material)
+                      {
+                          case 1:
+                              sigma = zugkraft / flaeche;
+                              epsilon = sigma / estahl;
+                              laengenaenderung = epsilon * laenge;
+                               printf("Die Laengenaenderung beträgt %lfmm", laengenaenderung);
+                               printf("Sigma beträgt%lf",sigma);
+                              break;
+
+                          case 2:
+                               sigma = zugkraft / flaeche;
+                              epsilon = sigma / ebeton;
+                              laengenaenderung = epsilon * laenge;
+                               printf("Die Laengenaenderung beträgt %lfmm", laengenaenderung);
+                               printf("Sigma beträgt%lf",sigma);
+                              break;
+
+                          case 3:
+                               sigma = zugkraft / flaeche;
+                              epsilon = sigma / ealu;
+                              laengenaenderung = epsilon * laenge;
+                               printf("Die Laengenaenderung beträgt %lfmm", laengenaenderung);
+                               printf("Sigma beträgt%lf",sigma);
+                              break;
+
+                      }
+                      break;
+
+
+                      case 2:
+                            printf("Bitte geben sie Seitenlänge a ein\n");
+                            fgets (s,100,stdin);
+                            sscanf(s,"%lf",&a);
+
+                            printf("Bitte geben sie Seitenlänge b ein\n");
+                            fgets (s,100,stdin);
+                            sscanf(s,"%lf",&b);
+
+                            printf("Bitte geben sie Seitenlänge c ein\n");
+                            fgets (s,100,stdin);
+                            sscanf(s,"%lf",&c);
+
+                            alpha = acos((a * a + b * b - c * c)/(2.0 * a * c));
+
+                            gama = asin(a*sin(alpha)/c);
+
+                            alpha = alpha * (180/M_PI);
+                            gama = gama * (180/M_PI);
+
+                           beta = 180 - alpha - gama;
+
+                           U = a + b + c;
+
+                           A = sqrt(((a + b + c) * (a + b - c) * (b + c - a) * (c + a - b)) / 4);
+
+                            printf ("Alpha ist gleich\n%.3lf Grad\n", alpha);
+                            printf ("Gamma ist gleich\n%.3lf Grad\n", gama);
+                            printf ("Beta ist gleich \n%.3lf Grad\n", beta);
+                            printf ("Der Umfang beträgt \n%.3lf mm\n", U);
+                            printf ("Der Flächeninhalt beträgt\n%.3lf mm^2\n", A);
+        break;
+      }
+  }
+  while (rechnerwahl != 3);
+
+    return 0;
+}
