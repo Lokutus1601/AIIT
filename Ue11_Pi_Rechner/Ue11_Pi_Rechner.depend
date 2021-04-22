@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1619097458 source:c:\users\lukas\onedrive\desktop\programieren\ue11_pi_rechner\main.c
+	<stdio.h>
+	<stdlib.h>
+	"math.h"
+

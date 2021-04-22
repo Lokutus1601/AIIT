@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1619099554 source:c:\users\lukas\onedrive\desktop\programieren\ue12_bankomatrechner\main.c
+	<stdio.h>
+	<stdlib.h>
+
