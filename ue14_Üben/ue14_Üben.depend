@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1623333102 source:c:\users\lukas\onedrive\documents\schule\programieren\ue14_Üben\kibio.c
+	<stdio.h>
+	<stdlib.h>
+	"kibio.h"
+
+1623333086 c:\users\lukas\onedrive\documents\schule\programieren\ue14_Üben\kibio.h
+
+1623938632 source:c:\users\lukas\onedrive\documents\schule\programieren\biblio\kibio.c
+	<stdio.h>
+	<stdlib.h>
+	"kibio.h"
+
+1623938675 c:\users\lukas\onedrive\documents\schule\programieren\biblio\kibio.h
+
+1623938199 source:c:\users\lukas\onedrive\documents\schule\programieren\ue14_Üben\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../Biblio/kibio.h"
+
